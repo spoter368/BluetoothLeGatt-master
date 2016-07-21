@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Auto Connect">
+
+        <EditTextPreference
+            android:title="Your Necklace"
+            android:key="com.amti.vela.bluetooth.autoconnect.device"
+            android:defaultValue=""
+            android:enabled="false" />
+
+        <CheckBoxPreference
+            android:title="Auto connect to necklace"
+            android:key="com.amti.vela.bluetooth.autoconnect"
+            android:defaultValue="false"/>
+
+        <CheckBoxPreference
+            android:title="Never ask to auto connect"
+            android:key="com.amti.vela.bluetooth.autoconnect.neverask"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Notifications">
+
+        <Preference
+            android:title="Enable notification access"
+            android:key="com.amti.vela.notification"
+            android:summary="Allows this app to tell your necklace when you get a notification. After changing this setting, you may need to restart the app for it to apply." >
+            <intent android:action="android.intent.action.VIEW"
+                android:targetPackage="android.provider.Settings"
+                android:targetClass="android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"/>
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

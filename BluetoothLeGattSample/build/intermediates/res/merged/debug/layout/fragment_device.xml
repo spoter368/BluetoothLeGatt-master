@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/battery_layout"
+            android:layout_below="@+id/deviceNameEdit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/battery"
+                android:background="@drawable/ic_battery"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/battery_filler"
+                android:background="@drawable/battery_filler"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/placeholder"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/critical_filler"
+                android:background="@drawable/battery_filler_critical"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/placeholder"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/placeholder"
+                android:background="@drawable/battery_placeholder"
+                android:layout_centerHorizontal="true"
+                android:layout_alignTop="@+id/battery" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/battery_end"
+                android:background="@drawable/battery_end"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/placeholder"
+                android:layout_marginLeft="0.5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="100%"
+                android:id="@+id/battery_text"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Device Name"
+            android:id="@+id/device_name"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/deviceNameEdit"
+            android:background="@drawable/ic_edit_selector"
+            android:layout_alignTop="@+id/device_name"
+            android:layout_toEndOf="@+id/device_name"
+            android:layout_marginLeft="5dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/msgType"
+            android:layout_below="@+id/battery_layout"
+            android:layout_marginTop="70dp"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Contact"
+            android:id="@+id/chooseContact"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_below="@+id/msgType"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="7dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/messageEditText"
+            android:layout_below="@id/chooseContact"
+            android:layout_alignParentStart="true"
+            android:inputType="textMultiLine"
+            android:isScrollContainer="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To:"
+            android:id="@+id/toText"
+            android:layout_alignBottom="@+id/chooseContact"
+            android:layout_toEndOf="@+id/chooseContact"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+</ScrollView>
